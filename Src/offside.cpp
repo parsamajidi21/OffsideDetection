@@ -12,15 +12,13 @@ int main(int argc, char** argv){
     cv::Mat src = cv::imread(cv::samples::findFile(parser.get<cv::String>("@input")), cv::IMREAD_COLOR);
     /*************************************************************************************************************************************************************/
     /**************************************************************Edge Detection******************************************************************************/
-    edgeDetector edge{src};
+    cv::Mat img = src.clone();
+    edgeDetector edge{img};
     edge.do_edgeDetection();
-    objDetection obj{src};
+    objDetection obj{img};
     obj.do_objDetection();
     /*************************************************************************************************************************************************************/
-    cv::imshow("img", src);
-
-
-
+    cv::imshow("Original Image", src);
     cv::waitKey(0);
     cv::destroyAllWindows();
 

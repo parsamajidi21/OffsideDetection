@@ -1,7 +1,5 @@
 #include "edgeDetection.h"
 
-
-
 /*************************************************************************************/
 int lowerThreshold = 1;
 int maxThreshold = 500;
@@ -26,29 +24,29 @@ double th1, th2;
         cv::Scalar lowerBound(36,25,25);
         cv::Scalar upperBound(70,255,255);
         //white Range
-        cv::Scalar lowerBound_W(0, 0, 200);
-        cv::Scalar upperBound_W(180, 30, 255);
+        //cv::Scalar lowerBound_W(0, 0, 200);
+        //cv::Scalar upperBound_W(180, 30, 255);
         //Green Range
         //cv::Scalar lowerBound(36,25,25);
         //cv::Scalar upperBound(70,255,255);
 
         cv::Mat maskGreen;
-        cv::Mat maskWhite;
+        //cv::Mat maskWhite;
         cv::inRange(hsvImage, lowerBound, upperBound, maskGreen);
-        cv::inRange(hsvImage, lowerBound_W, upperBound_W, maskWhite);
+        //cv::inRange(hsvImage, lowerBound_W, upperBound_W, maskWhite);
         dst = cdst.clone();
         cv::Mat maskedImage_green;
-        cv::Mat maskedImage_white;
+        //cv::Mat maskedImage_white;
         dst.copyTo(maskedImage_green, maskGreen);
-        dst.copyTo(maskedImage_white, maskWhite);
-        cv::Mat maskedImage;
-        cv::bitwise_or(maskedImage_green, maskedImage_white, maskedImage);
-        cv::imshow("masked imagegreen", maskedImage_green);
-        cv::imshow("masked imagewhite", maskedImage_white);
-        cv::imshow("masked image", maskedImage);
+        //dst.copyTo(maskedImage_white, maskWhite);
+        //cv::Mat maskedImage;
+        //cv::bitwise_or(maskedImage_green, maskedImage_white, maskedImage);
+        //cv::imshow("masked imagegreen", maskedImage_green);
+       // cv::imshow("masked imagewhite", maskedImage_white);
+        cv::imshow("masked image", maskedImage_green);
         th1 = lowerThreshold;
         th2 = th1 * 0.4;    
-        cv::Canny(maskedImage, EdgeImage, th1, th2);  
+        cv::Canny(maskedImage_green, EdgeImage, th1, th2);  
           // apply hough line transform
         cv::HoughLinesP(EdgeImage, lines, 2, CV_PI/180, 50, 10, 100);
         std::vector<cv::Point> vertices;

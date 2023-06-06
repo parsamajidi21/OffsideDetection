@@ -69,6 +69,4 @@ void objDetection::do_objDetection(){
     }
 
     cv::imshow("Detected Objects", input_img_o);
-    cv::waitKey(0);
-    cv::destroyAllWindows();
 }

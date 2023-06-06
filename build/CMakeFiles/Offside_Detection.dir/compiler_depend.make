@@ -837,7 +837,8 @@ CMakeFiles/Offside_Detection.dir/Src/edgeDetection.cpp.o: ../Src/edgeDetection.c
   /usr/local/include/opencv4/opencv2/video.hpp \
   /usr/local/include/opencv4/opencv2/video/tracking.hpp \
   /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
-  /usr/local/include/opencv4/opencv2/highgui.hpp
+  /usr/local/include/opencv4/opencv2/highgui.hpp \
+  ../Inc/ObjectDetection.h
 
 CMakeFiles/Offside_Detection.dir/Src/offside.cpp.o: ../Src/offside.cpp \
   /usr/include/stdc-predef.h \
