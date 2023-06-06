@@ -13,7 +13,7 @@ objDetection::~objDetection() {}
 
 void objDetection::do_objDetection(){
     cv::dnn::Net net;
-    net = cv::dnn::readNetFromDarknet("/home/parsa/workspace/darknet/cfg/yolov3.cfg", "/home/parsa/workspace/darknet/yolov3.weights");
+    net = cv::dnn::readNetFromDarknet("../darknet/cfg/yolov3.cfg", "../darknet/yolov3.weights");
     cv::Mat blob;
     cv::dnn::blobFromImage(input_img_o, blob, 1 / 255.0, cv::Size(416, 416), cv::Scalar(0, 0, 0), true, false);
 

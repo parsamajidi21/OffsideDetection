@@ -5,12 +5,10 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Src/edgeDetection.cpp
  /usr/include/stdc-predef.h
  /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Inc/edgeDetection.h
- /usr/local/include/opencv4/opencv2/opencv.hpp
- /usr/local/include/opencv4/opencv2/opencv_modules.hpp
- /usr/local/include/opencv4/opencv2/core.hpp
- /usr/local/include/opencv4/opencv2/core/cvdef.h
- /usr/local/include/opencv4/opencv2/core/version.hpp
- /usr/include/c++/11/limits
+ /usr/local/include/opencv4/opencv2/dnn.hpp
+ /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/include/c++/11/vector
+ /usr/include/c++/11/bits/stl_algobase.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h
  /usr/include/features.h
@@ -23,6 +21,43 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
  /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h
  /usr/include/c++/11/pstl/pstl_config.h
+ /usr/include/c++/11/bits/functexcept.h
+ /usr/include/c++/11/bits/exception_defines.h
+ /usr/include/c++/11/bits/cpp_type_traits.h
+ /usr/include/c++/11/ext/type_traits.h
+ /usr/include/c++/11/ext/numeric_traits.h
+ /usr/include/c++/11/bits/stl_pair.h
+ /usr/include/c++/11/bits/move.h
+ /usr/include/c++/11/type_traits
+ /usr/include/c++/11/bits/stl_iterator_base_types.h
+ /usr/include/c++/11/bits/stl_iterator_base_funcs.h
+ /usr/include/c++/11/bits/concept_check.h
+ /usr/include/c++/11/debug/assertions.h
+ /usr/include/c++/11/bits/stl_iterator.h
+ /usr/include/c++/11/bits/ptr_traits.h
+ /usr/include/c++/11/debug/debug.h
+ /usr/include/c++/11/bits/predefined_ops.h
+ /usr/include/c++/11/bits/allocator.h
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h
+ /usr/include/c++/11/ext/new_allocator.h
+ /usr/include/c++/11/new
+ /usr/include/c++/11/bits/exception.h
+ /usr/include/c++/11/bits/memoryfwd.h
+ /usr/include/c++/11/bits/stl_construct.h
+ /usr/include/c++/11/bits/stl_uninitialized.h
+ /usr/include/c++/11/ext/alloc_traits.h
+ /usr/include/c++/11/bits/alloc_traits.h
+ /usr/include/c++/11/bits/stl_vector.h
+ /usr/include/c++/11/initializer_list
+ /usr/include/c++/11/bits/stl_bvector.h
+ /usr/include/c++/11/bits/functional_hash.h
+ /usr/include/c++/11/bits/hash_bytes.h
+ /usr/include/c++/11/bits/range_access.h
+ /usr/include/c++/11/bits/vector.tcc
+ /usr/local/include/opencv4/opencv2/core.hpp
+ /usr/local/include/opencv4/opencv2/core/cvdef.h
+ /usr/local/include/opencv4/opencv2/core/version.hpp
+ /usr/include/c++/11/limits
  /usr/local/include/opencv4/opencv2/core/hal/interface.h
  /usr/include/c++/11/cstddef
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
@@ -78,26 +113,8 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /usr/include/c++/11/array
  /usr/include/c++/11/utility
  /usr/include/c++/11/bits/stl_relops.h
- /usr/include/c++/11/bits/stl_pair.h
- /usr/include/c++/11/bits/move.h
- /usr/include/c++/11/type_traits
- /usr/include/c++/11/initializer_list
- /usr/include/c++/11/bits/functexcept.h
- /usr/include/c++/11/bits/exception_defines.h
- /usr/include/c++/11/bits/stl_algobase.h
- /usr/include/c++/11/bits/cpp_type_traits.h
- /usr/include/c++/11/ext/type_traits.h
- /usr/include/c++/11/ext/numeric_traits.h
- /usr/include/c++/11/bits/stl_iterator_base_types.h
- /usr/include/c++/11/bits/stl_iterator_base_funcs.h
- /usr/include/c++/11/bits/concept_check.h
- /usr/include/c++/11/debug/assertions.h
- /usr/include/c++/11/bits/stl_iterator.h
- /usr/include/c++/11/bits/ptr_traits.h
- /usr/include/c++/11/debug/debug.h
- /usr/include/c++/11/bits/predefined_ops.h
- /usr/include/c++/11/bits/range_access.h
  /usr/local/include/opencv4/opencv2/core/base.hpp
+ /usr/local/include/opencv4/opencv2/opencv_modules.hpp
  /usr/include/c++/11/climits
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h
@@ -114,9 +131,6 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /usr/include/c++/11/bits/algorithmfwd.h
  /usr/include/c++/11/bits/stl_heap.h
  /usr/include/c++/11/bits/stl_tempbuf.h
- /usr/include/c++/11/bits/stl_construct.h
- /usr/include/c++/11/new
- /usr/include/c++/11/bits/exception.h
  /usr/include/c++/11/bits/uniform_int_dist.h
  /usr/include/c++/11/pstl/glue_algorithm_defs.h
  /usr/include/c++/11/functional
@@ -125,18 +139,10 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /usr/include/c++/11/tuple
  /usr/include/c++/11/bits/uses_allocator.h
  /usr/include/c++/11/bits/invoke.h
- /usr/include/c++/11/bits/functional_hash.h
- /usr/include/c++/11/bits/hash_bytes.h
  /usr/include/c++/11/bits/refwrap.h
  /usr/include/c++/11/bits/std_function.h
  /usr/include/c++/11/typeinfo
  /usr/include/c++/11/unordered_map
- /usr/include/c++/11/bits/allocator.h
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h
- /usr/include/c++/11/ext/new_allocator.h
- /usr/include/c++/11/bits/memoryfwd.h
- /usr/include/c++/11/ext/alloc_traits.h
- /usr/include/c++/11/bits/alloc_traits.h
  /usr/include/c++/11/ext/aligned_buffer.h
  /usr/include/c++/11/bits/hashtable.h
  /usr/include/c++/11/bits/hashtable_policy.h
@@ -144,11 +150,6 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /usr/include/c++/11/bits/node_handle.h
  /usr/include/c++/11/bits/unordered_map.h
  /usr/include/c++/11/bits/erase_if.h
- /usr/include/c++/11/vector
- /usr/include/c++/11/bits/stl_uninitialized.h
- /usr/include/c++/11/bits/stl_vector.h
- /usr/include/c++/11/bits/stl_bvector.h
- /usr/include/c++/11/bits/vector.tcc
  /usr/include/c++/11/pstl/execution_defs.h
  /usr/local/include/opencv4/opencv2/core/cvstd.hpp
  /usr/include/c++/11/cstring
@@ -311,14 +312,6 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /usr/local/include/opencv4/opencv2/core/optim.hpp
  /usr/local/include/opencv4/opencv2/core/ovx.hpp
  /usr/local/include/opencv4/opencv2/core/cvdef.h
- /usr/local/include/opencv4/opencv2/calib3d.hpp
- /usr/local/include/opencv4/opencv2/features2d.hpp
- /usr/local/include/opencv4/opencv2/flann/miniflann.hpp
- /usr/local/include/opencv4/opencv2/flann/defines.h
- /usr/local/include/opencv4/opencv2/flann/config.h
- /usr/local/include/opencv4/opencv2/core/affine.hpp
- /usr/local/include/opencv4/opencv2/dnn.hpp
- /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
  /usr/local/include/opencv4/opencv2/core/async.hpp
  /usr/local/include/opencv4/opencv2/dnn/version.hpp
  /usr/local/include/opencv4/opencv2/dnn/dict.hpp
@@ -330,6 +323,15 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp
  /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp
  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
+ /usr/local/include/opencv4/opencv2/imgproc.hpp
+ /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
+ /usr/local/include/opencv4/opencv2/opencv.hpp
+ /usr/local/include/opencv4/opencv2/calib3d.hpp
+ /usr/local/include/opencv4/opencv2/features2d.hpp
+ /usr/local/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/local/include/opencv4/opencv2/flann/defines.h
+ /usr/local/include/opencv4/opencv2/flann/config.h
+ /usr/local/include/opencv4/opencv2/core/affine.hpp
  /usr/local/include/opencv4/opencv2/flann.hpp
  /usr/local/include/opencv4/opencv2/flann/flann_base.hpp
  /usr/local/include/opencv4/opencv2/flann/general.h
@@ -378,8 +380,6 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o
  /usr/local/include/opencv4/opencv2/highgui.hpp
  /usr/local/include/opencv4/opencv2/imgcodecs.hpp
  /usr/local/include/opencv4/opencv2/videoio.hpp
- /usr/local/include/opencv4/opencv2/imgproc.hpp
- /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
  /usr/local/include/opencv4/opencv2/ml.hpp
  /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp
  /usr/local/include/opencv4/opencv2/objdetect.hpp
