@@ -1,7 +1,7 @@
-CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o: \
- /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Src/edgeDetection.cpp \
+CMakeFiles/Offside_Detection.dir/Src/ObjectDetection.cpp.o: \
+ /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Src/ObjectDetection.cpp \
  /usr/include/stdc-predef.h \
- /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Inc/edgeDetection.h \
+ /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Inc/ObjectDetection.h \
  /usr/local/include/opencv4/opencv2/dnn.hpp \
  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
@@ -262,16 +262,16 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o: \
  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
  /usr/local/include/opencv4/opencv2/core/cvdef.h \
  /usr/local/include/opencv4/opencv2/core/async.hpp \
- /usr/local/include/opencv4/opencv2/dnn/../dnn/version.hpp \
+ /usr/local/include/opencv4/opencv2/dnn/version.hpp \
  /usr/local/include/opencv4/opencv2/dnn/dict.hpp /usr/include/c++/11/map \
  /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h \
  /usr/local/include/opencv4/opencv2/dnn/layer.hpp \
  /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp \
  /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
- /usr/local/include/opencv4/opencv2/dnn/utils/../dnn.hpp \
+ /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
  /usr/local/include/opencv4/opencv2/imgproc.hpp \
- /usr/local/include/opencv4/opencv2/./imgproc/segmentation.hpp \
+ /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
  /usr/local/include/opencv4/opencv2/opencv.hpp \
  /usr/local/include/opencv4/opencv2/calib3d.hpp \
  /usr/local/include/opencv4/opencv2/features2d.hpp \

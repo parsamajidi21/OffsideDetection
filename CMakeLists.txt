@@ -16,6 +16,7 @@ add_library(OffsideDetection_lib Inc/edgeDetection.h Src/edgeDetection.cpp)
 set(SOURCES
     Src/edgeDetection.cpp
     Src/offside.cpp
+    Src/ObjectDetection.cpp
 )
 
 

@@ -356,4 +356,5 @@ CMakeFiles/Offside_Detection.dir/Src/offside.cpp.o: \
  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
  /usr/local/include/opencv4/opencv2/highgui.hpp \
- /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Inc/edgeDetection.h
+ /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Inc/edgeDetection.h \
+ /home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Inc/ObjectDetection.h

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Offside_Detection.dir/Src/ObjectDetection.cpp.o"
+  "CMakeFiles/Offside_Detection.dir/Src/ObjectDetection.cpp.o.d"
   "CMakeFiles/Offside_Detection.dir/Src/edgeDetection.cpp.o"
   "CMakeFiles/Offside_Detection.dir/Src/edgeDetection.cpp.o.d"
   "CMakeFiles/Offside_Detection.dir/Src/offside.cpp.o"

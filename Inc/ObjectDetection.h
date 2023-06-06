@@ -12,12 +12,12 @@ class objDetection{
     
     private:
 
-        cv::Mat input_img;
+        cv::Mat input_img_o;
         
         cv::Mat result_img;
 
     public:
-        objDetection(cv::Mat c_input);
+        objDetection(cv::Mat o_input);
 
         ~objDetection();
 
@@ -25,4 +25,4 @@ class objDetection{
 };
 
 
-#endif //EDGE_DETECTION
+#endif //OBJ_DETECTION

@@ -142,6 +142,30 @@ Offside_Detection/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Offside_Detection.dir/build.make CMakeFiles/Offside_Detection.dir/build
 .PHONY : Offside_Detection/fast
 
+Src/ObjectDetection.o: Src/ObjectDetection.cpp.o
+.PHONY : Src/ObjectDetection.o
+
+# target to build an object file
+Src/ObjectDetection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Offside_Detection.dir/build.make CMakeFiles/Offside_Detection.dir/Src/ObjectDetection.cpp.o
+.PHONY : Src/ObjectDetection.cpp.o
+
+Src/ObjectDetection.i: Src/ObjectDetection.cpp.i
+.PHONY : Src/ObjectDetection.i
+
+# target to preprocess a source file
+Src/ObjectDetection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Offside_Detection.dir/build.make CMakeFiles/Offside_Detection.dir/Src/ObjectDetection.cpp.i
+.PHONY : Src/ObjectDetection.cpp.i
+
+Src/ObjectDetection.s: Src/ObjectDetection.cpp.s
+.PHONY : Src/ObjectDetection.s
+
+# target to generate assembly for a file
+Src/ObjectDetection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Offside_Detection.dir/build.make CMakeFiles/Offside_Detection.dir/Src/ObjectDetection.cpp.s
+.PHONY : Src/ObjectDetection.cpp.s
+
 Src/edgeDetection.o: Src/edgeDetection.cpp.o
 .PHONY : Src/edgeDetection.o
 
@@ -203,6 +227,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... OffsideDetection_lib"
 	@echo "... Offside_Detection"
+	@echo "... Src/ObjectDetection.o"
+	@echo "... Src/ObjectDetection.i"
+	@echo "... Src/ObjectDetection.s"
 	@echo "... Src/edgeDetection.o"
 	@echo "... Src/edgeDetection.i"
 	@echo "... Src/edgeDetection.s"
