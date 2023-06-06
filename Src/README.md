@@ -1,1 +1,0 @@
-# Offside Detection - Opencv - C++

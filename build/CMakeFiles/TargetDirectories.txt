@@ -1,0 +1,4 @@
+/home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/build/CMakeFiles/OffsideDetection_lib.dir
+/home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/build/CMakeFiles/Offside_Detection.dir
+/home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/build/CMakeFiles/edit_cache.dir
+/home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/build/CMakeFiles/rebuild_cache.dir

@@ -4,7 +4,7 @@
 
 /*************************************************************************************/
 int lowerThreshold = 1;
-int maxThreshold = 200;
+int maxThreshold = 500;
 cv::Mat EdgeImage, gaussianImage, grayImage, cdst, dst;
 std::vector<cv::Vec4i> lines;
 int kernel=1;
@@ -20,24 +20,46 @@ double th1, th2;
 /*******************************************Call back Functions for Trackbars*************************************/
     void 
     edgeDetector::callBackTrackBarCanny(int, void*){
+        cv::Mat hsvImage = cdst.clone();
+        cv::cvtColor(hsvImage, hsvImage, cv::COLOR_BGR2HSV);
+        //Green Range
+        cv::Scalar lowerBound(36,25,25);
+        cv::Scalar upperBound(70,255,255);
+        //white Range
+        cv::Scalar lowerBound_W(0, 0, 200);
+        cv::Scalar upperBound_W(180, 30, 255);
+        //Green Range
+        //cv::Scalar lowerBound(36,25,25);
+        //cv::Scalar upperBound(70,255,255);
+
+        cv::Mat maskGreen;
+        cv::Mat maskWhite;
+        cv::inRange(hsvImage, lowerBound, upperBound, maskGreen);
+        cv::inRange(hsvImage, lowerBound_W, upperBound_W, maskWhite);
         dst = cdst.clone();
+        cv::Mat maskedImage_green;
+        cv::Mat maskedImage_white;
+        dst.copyTo(maskedImage_green, maskGreen);
+        dst.copyTo(maskedImage_white, maskWhite);
+        cv::Mat maskedImage;
+        cv::bitwise_or(maskedImage_green, maskedImage_white, maskedImage);
+        cv::imshow("masked imagegreen", maskedImage_green);
+        cv::imshow("masked imagewhite", maskedImage_white);
+        cv::imshow("masked image", maskedImage);
         th1 = lowerThreshold;
-        th2 = th1 * 0.4;
-        cv::Canny(gaussianImage, EdgeImage, th1, th2);  
-        //cv::cvtColor(EdgeImage, cdst, cv::COLOR_GRAY2BGR);
+        th2 = th1 * 0.4;    
+        cv::Canny(maskedImage, EdgeImage, th1, th2);  
           // apply hough line transform
         cv::HoughLinesP(EdgeImage, lines, 2, CV_PI/180, 50, 10, 100);
         std::vector<cv::Point> vertices;
-  // draw lines on the detected points
-        //cv::HoughLines(EdgeImage, lines, 1, CV_PI/180, 150, 0, 0 ); // runs the actual detection
         // Draw the lines
         for( size_t i = 0; i < lines.size(); i++ ){
         cv::Vec4i l = lines[i];
         vertices.push_back(cv::Point(l[0], l[1]));
         vertices.push_back(cv::Point(l[2], l[3]));
-        line( dst, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]), cv::Scalar(0,0,255), 1, cv::LINE_AA);
+        line( dst, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]), cv::Scalar(128,0,128), 2, cv::LINE_AA);
         }
-        cv::fillPoly(dst, std::vector<std::vector<cv::Point>>{vertices}, cv::Scalar(0, 0, 255));
+        //cv::fillPoly(dst, std::vector<std::vector<cv::Point>>{vertices}, cv::Scalar(0, 0, 255));
         cv::imshow("edgeImages", EdgeImage);
         cv::imshow("Detected Lines (in red) - Standard Hough Line Transform", dst);
     }

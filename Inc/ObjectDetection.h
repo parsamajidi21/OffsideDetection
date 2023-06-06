@@ -1,5 +1,5 @@
-#ifndef EDGE_DETECTION
-#define EDGE_DETECTION
+#ifndef OBJ_DETECTION
+#define OBJ_DETECTION
 
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-class edgeDetector{
+class objDetection{
     
     private:
 
@@ -17,15 +17,11 @@ class edgeDetector{
         cv::Mat result_img;
 
     public:
-        edgeDetector(cv::Mat c_input);
+        objDetection(cv::Mat c_input);
 
-        ~edgeDetector();
+        ~objDetection();
 
-        void do_edgeDetection();
-
-        static void callBackTrackBarFilter(int, void *);
-
-        static void callBackTrackBarCanny(int, void *);
+        void do_objDetection();
 };
 
 

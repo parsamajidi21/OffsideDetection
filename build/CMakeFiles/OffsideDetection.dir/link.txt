@@ -1,0 +1,2 @@
+/usr/bin/ar qc libOffsideDetection.a CMakeFiles/OffsideDetection.dir/Src/offside.cpp.o
+/usr/bin/ranlib libOffsideDetection.a
