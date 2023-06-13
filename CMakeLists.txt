@@ -17,6 +17,7 @@ set(SOURCES
     Src/edgeDetection.cpp
     Src/offside.cpp
     Src/ObjectDetection.cpp
+    Src/Histogram.cpp
 )
 
 

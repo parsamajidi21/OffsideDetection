@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Src/Histogram.cpp" "CMakeFiles/Offside_Detection.dir/Src/Histogram.cpp.o" "gcc" "CMakeFiles/Offside_Detection.dir/Src/Histogram.cpp.o.d"
   "/home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Src/ObjectDetection.cpp" "CMakeFiles/Offside_Detection.dir/Src/ObjectDetection.cpp.o" "gcc" "CMakeFiles/Offside_Detection.dir/Src/ObjectDetection.cpp.o.d"
   "/home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Src/edgeDetection.cpp" "CMakeFiles/Offside_Detection.dir/Src/edgeDetection.cpp.o" "gcc" "CMakeFiles/Offside_Detection.dir/Src/edgeDetection.cpp.o.d"
   "/home/parsa/Documents/Unipd/2ndSem-30/3-ComputerVision-21-June/LAB5/Src/offside.cpp" "CMakeFiles/Offside_Detection.dir/Src/offside.cpp.o" "gcc" "CMakeFiles/Offside_Detection.dir/Src/offside.cpp.o.d"

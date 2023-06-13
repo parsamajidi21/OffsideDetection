@@ -142,6 +142,30 @@ Offside_Detection/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Offside_Detection.dir/build.make CMakeFiles/Offside_Detection.dir/build
 .PHONY : Offside_Detection/fast
 
+Src/Histogram.o: Src/Histogram.cpp.o
+.PHONY : Src/Histogram.o
+
+# target to build an object file
+Src/Histogram.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Offside_Detection.dir/build.make CMakeFiles/Offside_Detection.dir/Src/Histogram.cpp.o
+.PHONY : Src/Histogram.cpp.o
+
+Src/Histogram.i: Src/Histogram.cpp.i
+.PHONY : Src/Histogram.i
+
+# target to preprocess a source file
+Src/Histogram.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Offside_Detection.dir/build.make CMakeFiles/Offside_Detection.dir/Src/Histogram.cpp.i
+.PHONY : Src/Histogram.cpp.i
+
+Src/Histogram.s: Src/Histogram.cpp.s
+.PHONY : Src/Histogram.s
+
+# target to generate assembly for a file
+Src/Histogram.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Offside_Detection.dir/build.make CMakeFiles/Offside_Detection.dir/Src/Histogram.cpp.s
+.PHONY : Src/Histogram.cpp.s
+
 Src/ObjectDetection.o: Src/ObjectDetection.cpp.o
 .PHONY : Src/ObjectDetection.o
 
@@ -227,6 +251,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... OffsideDetection_lib"
 	@echo "... Offside_Detection"
+	@echo "... Src/Histogram.o"
+	@echo "... Src/Histogram.i"
+	@echo "... Src/Histogram.s"
 	@echo "... Src/ObjectDetection.o"
 	@echo "... Src/ObjectDetection.i"
 	@echo "... Src/ObjectDetection.s"

@@ -2,8 +2,8 @@
 #include <opencv4/opencv2/highgui.hpp>
 #include "edgeDetection.h"
 #include "ObjectDetection.h"
-
-
+#include <opencv2/xfeatures2d.hpp>
+#include "Histogram.h"
 int main(int argc, char** argv){
 
 
@@ -12,9 +12,12 @@ int main(int argc, char** argv){
     cv::Mat src = cv::imread(cv::samples::findFile(parser.get<cv::String>("@input")), cv::IMREAD_COLOR);
     /*************************************************************************************************************************************************************/
     /**************************************************************Edge Detection******************************************************************************/
+    cv::resize(src, src, cv::Size(src.cols * 0.75,src.rows * 0.75));
     cv::Mat img = src.clone();
-    edgeDetector edge{img};
-    edge.do_edgeDetection();
+    //edgeDetector edge{src};
+    //edge.do_edgeDetection();
+    histoGram obj1{src};
+    obj1.do_Histogram();
     objDetection obj{img};
     obj.do_objDetection();
     /*************************************************************************************************************************************************************/

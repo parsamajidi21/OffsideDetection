@@ -4,6 +4,7 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/opencv.hpp>
+#include <opencv2/core/cuda.hpp>
 #include <opencv4/opencv2/highgui.hpp>
 #include <iostream>
 #include <vector>
@@ -13,8 +14,7 @@ class objDetection{
     private:
 
         cv::Mat input_img_o;
-        
-        cv::Mat result_img;
+
 
     public:
         objDetection(cv::Mat o_input);
@@ -22,6 +22,7 @@ class objDetection{
         ~objDetection();
 
         void do_objDetection();
+
 };
 
 
