@@ -419,8 +419,7 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o: ../Src/edgeDetectio
   /usr/local/include/opencv4/opencv2/video/tracking.hpp \
   /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
   /usr/local/include/opencv4/opencv2/highgui.hpp \
-  ../Inc/ObjectDetection.h \
-  ../Src/Histogram.h
+  ../Inc/ObjectDetection.h
 
 
 /usr/local/include/opencv4/opencv2/video/tracking.hpp:
@@ -554,8 +553,6 @@ CMakeFiles/OffsideDetection_lib.dir/Src/edgeDetection.cpp.o: ../Src/edgeDetectio
 /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp:
 
 /usr/local/include/opencv4/opencv2/dnn/layer.hpp:
-
-../Src/Histogram.h:
 
 /usr/local/include/opencv4/opencv2/video.hpp:
 

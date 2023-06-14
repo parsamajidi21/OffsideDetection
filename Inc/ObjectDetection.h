@@ -22,6 +22,7 @@ class objDetection{
         ~objDetection();
 
         void do_objDetection();
+        std::vector<cv::Point> getPlayerPositions() const;
 
 };
 

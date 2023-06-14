@@ -1,8 +1,19 @@
 #include "ObjectDetection.h"
 #include "edgeDetection.h"
-#include "Histogram.h"
-//****************************Variables*************************************//
-//**************************************************************************//
+
+
+//**********************************Threasholding the Colors***********************************************************//
+cv::Scalar lower_yello(20, 100, 100);
+cv::Scalar upper_yello(30, 255, 255);
+cv::Scalar lower_red1(0, 50, 50);
+cv::Scalar upper_red1(10, 255, 255);
+cv::Scalar lower_red2(160, 50, 50);
+cv::Scalar upper_red2(179, 255, 255);
+cv::Scalar lower_white(0, 0, 200);
+cv::Scalar upper_white(255, 30, 255);
+//**********************************************************************************************************************//
+std::vector<int> indices;
+
 
 
 //*****************************Const and Desctructor **********************//
@@ -12,6 +23,7 @@ objDetection::~objDetection() {}
 
 
 void objDetection::do_objDetection() {
+    /************************************************************************************************************************************/
     cv::dnn::Net net;
     net = cv::dnn::readNetFromDarknet("../darknet/cfg/yolov3.cfg", "../darknet/yolov3.weights");
     cv::Mat blob;
@@ -25,7 +37,8 @@ void objDetection::do_objDetection() {
     std::vector<int> classIds;
     std::vector<float> confidences;
     std::vector<cv::Rect> boxes;
-
+    /*************************************************************************************************************************************/
+    /************************************************Points of the boundary boxes********************************************************/
     for (int i = 0; i < output.rows; ++i) {
         cv::Mat scores = output.row(i).colRange(5, output.cols);
         cv::Point classIdPoint;
@@ -46,7 +59,8 @@ void objDetection::do_objDetection() {
             boxes.push_back(cv::Rect(left, top, width, height));
         }
     }
-
+    /***************************************************************************************************************************************/
+    /*******************************************************Class Labels********************************************************************/
     std::vector<std::string> classNames = {
         "Yello Team",
         "Red Team",
@@ -54,29 +68,21 @@ void objDetection::do_objDetection() {
         "Goalkeeper",
         "Referee"
     };
-    std::vector<int> indices;
+    /****************************************************************************************************************************************/
+    //std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
-
+    std::vector<cv::Point> playerPositionD((indices.size()));
     cv::Mat hsv;
     cv::cvtColor(input_img_o, hsv, cv::COLOR_BGR2HSV);
-    //**********************************Threasholding the Colors***********************************************************//
-    cv::Scalar lower_yello(20, 100, 100);
-    cv::Scalar upper_yello(30, 255, 255);
-    cv::Scalar lower_red1(0, 50, 50);
-    cv::Scalar upper_red1(10, 255, 255);
-    cv::Scalar lower_red2(160, 50, 50);
-    cv::Scalar upper_red2(179, 255, 255);
-    cv::Scalar lower_white(0, 0, 200);
-    cv::Scalar upper_white(255, 30, 255);
-    //**********************************************************************************************************************//
+    /*****************************************************************************************************************************************/
 
-    std::vector<cv::Point> playerPositions;
 
     for (size_t i = 0; i < indices.size(); ++i) {
         int idx = indices[i];
         cv::Rect box = boxes[idx];
-        std::cout << (box.x + (box.x + box.width))/2 << ", " << (box.y + (box.y + box.height))/2 << std::endl; 
-        cv::circle(input_img_o, cv::Point((box.x + (box.x + box.width))/2, (box.y + (box.y + box.height))/2), 8, cv::Scalar(255,255,255), -1);  
+        //std::cout << (box.x + (box.x + box.width))/2 << ", " << (box.y + (box.y + box.height))/2 << std::endl; 
+        playerPositionD[i] = cv::Point((box.x + (box.x + box.width))/2, (box.y + (box.y + box.height))/2);
+        cv::circle(input_img_o, cv::Point((box.x + (box.x + box.width))/2, (box.y + (box.y + box.height))/2), 4 , cv::Scalar(255,255,255), -1);  
         cv::Point line1Start(171, 295);  
         cv::Point line1End(708, 523);  
 
@@ -99,15 +105,16 @@ void objDetection::do_objDetection() {
         int parallelStartY = averageSlope * parallelStartX + parallelIntercept;
         int parallelEndY = averageSlope * parallelEndX + parallelIntercept;
 
-        cv::line(input_img_o, line1Start, line1End, cv::Scalar(0, 0, 255), 2);
+        //cv::line(input_img_o, line1Start, line1End, cv::Scalar(0, 0, 255), 2);
 
         cv::line(input_img_o, line2Start, line2End, cv::Scalar(0, 0, 255), 2);
-
-        cv::line(input_img_o, cv::Point(parallelStartX, parallelStartY), cv::Point(parallelEndX, parallelEndY), cv::Scalar(0, 255, 0), 2);
-
-
+       /* if(parallelStartY > 120 && parallelStartY < 180){
+             cv::line(input_img_o, cv::Point(parallelStartX, parallelStartY), cv::Point(parallelEndX, parallelEndY), cv::Scalar(0, 255, 0), 2);
+             std::cout << cv::Point(parallelStartX, parallelStartY) << ", " << cv::Point(parallelEndX, parallelEndY) << std::endl;
+        }*/
         cv::rectangle(input_img_o, box, cv::Scalar(0, 255, 0), 3);
 
+        /*****************************************************Masking********************************************************************/
         cv::Mat roi = hsv(box);
         cv::Mat blueMask, redMask, whiteMask, yellowMask;
         cv::inRange(roi, lower_yello, upper_yello, yellowMask);
@@ -118,7 +125,8 @@ void objDetection::do_objDetection() {
         double yellowPixels = cv::countNonZero(yellowMask);
         double redPixels = cv::countNonZero(redMask);
         double whitePixels = cv::countNonZero(whiteMask);
-
+        /************************************************************************************************************************************/
+        /****************************************************Classification and labeling*****************************************************/
         std::string label;
         if (whitePixels > yellowPixels && whitePixels > redPixels) {
             label = classNames[3];  // Goalkeeper
@@ -127,12 +135,13 @@ void objDetection::do_objDetection() {
         } else {
             label = classNames[1];  // Team 2
         }
-
         cv::Size labelSize = cv::getTextSize(label, cv::FONT_HERSHEY_SIMPLEX, 0.5, 1, nullptr);
         cv::putText(input_img_o, label, cv::Point(box.x, box.y - labelSize.height / 2),
                     cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0), 1);
+        /*************************************************************************************************************************************/
     }
-    edgeDetector edge{input_img_o};
-    edge.do_edgeDetection();
+    /*****************************************************************************************************************************************/
+    //edgeDetector edge{input_img_o};
+    //edge.do_edgeDetection();
     cv::imshow("Detected Objects", input_img_o);
 }
